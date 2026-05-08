@@ -58,7 +58,7 @@ export function WhyAura() {
                 <span aria-hidden className="text-magenta">&rdquo;</span>
               </blockquote>
               <p className="mt-4 text-sm text-ink-soft">
-                — Dr. Anjali Menon, on her first day at Aura
+                — Dr. Anjali Menon
               </p>
             </Reveal>
 
@@ -83,9 +83,9 @@ export function WhyAura() {
 
               <Reveal delay={200}>
                 <Note number="03" title="Open all seven days, including Sunday">
-                  The week shouldn&rsquo;t decide when you take care of yourself. Book online
-                  any time, get a WhatsApp confirmation from a real person within business
-                  hours.
+                  Open all seven days — including Sundays, when most clinics in Ottapalam
+                  are closed. Book online any time; a real person confirms within business
+                  hours on the same WhatsApp thread.
                 </Note>
               </Reveal>
             </div>

@@ -56,31 +56,36 @@ export function Booking() {
               <Detail label="Phone">
                 <a
                   href={`tel:${site.phones.primaryE164}`}
-                  className="tnum underline-offset-4 hover:underline"
+                  className="tnum block underline-offset-4 hover:underline"
                 >
                   {site.phones.primaryDisplay}
-                </a>{" "}
-                <span className="text-ink-faint">·</span>{" "}
+                </a>
                 <a
                   href={`tel:${site.phones.secondaryE164}`}
-                  className="tnum underline-offset-4 hover:underline"
+                  className="tnum block underline-offset-4 hover:underline"
                 >
                   {site.phones.secondaryDisplay}
                 </a>
               </Detail>
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-[1.25rem] border border-line">
-              <iframe
-                title="Aura Dental Care location"
-                src={site.mapEmbed}
-                width="100%"
-                height="240"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block grayscale-[20%]"
-              />
-            </div>
+            <a
+              href={site.social.google}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-10 flex items-center justify-between gap-4 overflow-hidden rounded-[1.25rem] border border-line bg-paper-cool px-6 py-5 transition hover:border-purple/30 hover:bg-paper-cool"
+            >
+              <div>
+                <p className="label text-ink-faint">Find us on Google Maps</p>
+                <p className="mt-1 text-[0.95rem] font-medium text-ink">
+                  {site.address.street}, {site.address.locality}
+                </p>
+                <p className="text-sm text-ink-soft">{site.address.region} {site.address.postalCode}</p>
+              </div>
+              <span className="shrink-0 text-purple transition-transform group-hover:translate-x-1" aria-hidden>
+                →
+              </span>
+            </a>
           </Reveal>
 
           <Reveal className="md:col-span-7" delay={120}>

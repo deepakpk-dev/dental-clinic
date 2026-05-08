@@ -16,7 +16,7 @@ const doctors: Doctor[] = [
     role: "Chief Dental Surgeon · Orthodontist",
     qualifications: "BDS, MDS (Orthodontics)",
     years: "12 yrs",
-    bio: "Twelve years of straightening smiles across Kerala. Believes braces should be the last thing patients worry about — and the first thing they show off.",
+    bio: "Twelve years of orthodontic practice across Palakkad district. She takes the long first consultation — the one most clinics skip — because the treatment plan is only as good as the conversation before it.",
     initials: "AM",
   },
   {
@@ -24,7 +24,7 @@ const doctors: Doctor[] = [
     role: "Implantologist · Cosmetic Dentistry",
     qualifications: "BDS, Fellowship in Implantology",
     years: "9 yrs",
-    bio: "Specialist in single-visit implants and full smile makeovers. Trained in Bangalore and Singapore. Fluent in 'I'm-terrified-of-dentists'.",
+    bio: "Post-graduate fellowship in implantology, Rajiv Gandhi University of Health Sciences. Handles full-arch cases and complete smile makeovers. Believes a good cosmetic result is invisible — you look like yourself, only without the thing that bothered you.",
     initials: "RK",
   },
 ];

@@ -12,19 +12,19 @@ const items: Testimonial[] = [
   {
     name: "Lakshmi P.",
     detail: "Orthodontics · Ottapalam",
-    body: "I was nervous about braces at 32. Dr. Anjali walked me through every option and the results are incredible. The clinic feels nothing like a hospital — it feels like a spa.",
+    body: "I kept putting off braces for years. Dr. Anjali showed me a simulation of what my teeth would look like on the very first visit — I booked the same week. Ten months later I can't stop taking photos of myself.",
     rating: 5,
   },
   {
     name: "Vinod K.",
     detail: "Implants · Palakkad",
-    body: "Got two implants done in a single visit. No pain, very professional. Sunday appointments saved me three trips. Worth driving from Palakkad for.",
+    body: "I expected two or three appointments minimum. Both implants were done in a single visit. The Sunday slot meant I didn't take a single day off work. I've already sent three people from the office.",
     rating: 5,
   },
   {
     name: "Reshma & Aarav",
     detail: "Children's dentistry · Shoranur",
-    body: "My 6-year-old actually asks when we're going back. They have a kids' corner, the dentist is patient, and they explain everything to him. Game-changer.",
+    body: "My son cried the entire auto ride there. Forty minutes later he was asking to see the sticker chart again before we left. I don't know what they did differently, but we're not going anywhere else.",
     rating: 5,
   },
 ];
@@ -49,8 +49,7 @@ export function Testimonials() {
           <div className="md:col-span-7">
             <p className="label">Chapter 05 · Patient notes</p>
             <h2 className="mt-5 font-display text-[clamp(2rem,4.4vw,3.6rem)] font-medium leading-[0.98] tracking-[-0.022em] text-ink">
-              Words that go further than <em className="italic text-magenta">words</em> ever
-              could.
+              Stories from patients who <em className="italic text-magenta">came back</em>.
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
