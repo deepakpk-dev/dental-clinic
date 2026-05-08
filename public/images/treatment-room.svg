@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1fb"/>
+      <stop offset="55%" stop-color="#e8d4f1"/>
+      <stop offset="100%" stop-color="#c8a2d8"/>
+    </linearGradient>
+    <linearGradient id="chair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a987c9"/>
+      <stop offset="100%" stop-color="#5b2a86"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ede0f4"/>
+      <stop offset="100%" stop-color="#d4b8e3"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect x="0" y="700" width="800" height="300" fill="url(#floor)"/>
+  <circle cx="400" cy="350" r="500" fill="url(#glow)"/>
+  <!-- Wall frames -->
+  <rect x="80" y="180" width="120" height="160" rx="8" fill="#fff" stroke="#c8a2d8" stroke-width="2"/>
+  <rect x="220" y="200" width="120" height="140" rx="8" fill="#fff" stroke="#c8a2d8" stroke-width="2"/>
+  <text x="140" y="260" font-family="Georgia, serif" font-size="32" fill="#c8a2d8" text-anchor="middle">smile</text>
+  <text x="280" y="280" font-family="Georgia, serif" font-size="28" fill="#c8a2d8" text-anchor="middle">more</text>
+  <!-- Dental chair -->
+  <ellipse cx="450" cy="850" rx="220" ry="40" fill="#000" opacity="0.08"/>
+  <rect x="380" y="500" width="200" height="350" rx="60" fill="url(#chair)"/>
+  <rect x="350" y="450" width="160" height="120" rx="50" fill="#a987c9"/>
+  <rect x="420" y="700" width="120" height="180" rx="20" fill="#8b5fbf"/>
+  <!-- Light arm -->
+  <rect x="540" y="250" width="14" height="280" rx="6" fill="#fff"/>
+  <circle cx="600" cy="260" r="60" fill="#fff" stroke="#c8a2d8" stroke-width="3"/>
+  <!-- Counter -->
+  <rect x="600" y="600" width="180" height="220" rx="10" fill="#fff" stroke="#e8d4f1" stroke-width="2"/>
+  <rect x="610" y="610" width="50" height="50" rx="8" fill="#ede0f4"/>
+  <rect x="670" y="610" width="50" height="50" rx="8" fill="#ede0f4"/>
+  <rect x="730" y="610" width="40" height="50" rx="8" fill="#ede0f4"/>
+  <text x="400" y="970" font-family="Georgia, serif" font-size="18" fill="#5b2a86" text-anchor="middle" opacity="0.5">aura · treatment room</text>
+</svg>

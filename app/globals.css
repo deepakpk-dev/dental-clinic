@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
+/*
+ * Aura Dental Care — design system
+ *
+ * Palette: OKLCH, perceptually uniform. Neutrals tinted toward brand
+ * lavender hue (~305) so cream surfaces feel cohesive with purple ink.
+ * Accents are rare by design — magenta is reserved for moments of
+ * emphasis (one or two per page), not a recurring brand color.
+ *
+ * Typography: Alegreya (display, humanist serif with literary warmth)
+ * + Hanken Grotesk (body, slightly characterful humanist sans). Chosen
+ * to read closer to a Keralan boutique-hotel print piece than a SaaS
+ * landing page.
+ *
+ * Spacing scale: 4pt base, semantic names. Type scale uses clamp() on
+ * marketing-page headings only.
+ */
+
+@theme {
+  /* ── Brand ─────────────────────────────────────────────── */
+  --color-ink: oklch(20% 0.04 305);                 /* near-black, hint of purple */
+  --color-ink-soft: oklch(38% 0.05 305);
+  --color-ink-mute: oklch(48% 0.05 305);            /* ~7:1 on paper — body-safe */
+  --color-ink-faint: oklch(58% 0.05 305);           /* ~4.7:1 on paper — clears WCAG AA */
+
+  --color-paper: oklch(98.5% 0.006 80);             /* warm cream surface */
+  --color-paper-warm: oklch(96% 0.012 70);
+  --color-paper-cool: oklch(96% 0.012 305);         /* lavender mist */
+  --color-paper-deeper: oklch(91% 0.025 305);
+  --color-line: oklch(86% 0.025 305);
+  --color-line-soft: oklch(92% 0.018 305);
+
+  --color-purple: oklch(35% 0.16 300);              /* primary CTA / brand ink */
+  --color-purple-mid: oklch(50% 0.16 300);
+  --color-purple-soft: oklch(70% 0.10 305);
+  --color-purple-pale: oklch(89% 0.05 305);
+
+  --color-magenta: oklch(52% 0.21 5);               /* RARE accent */
+  --color-magenta-soft: oklch(78% 0.10 5);
+
+  /* Confirmation green — slightly purple-tinted so it sits next to the
+     lavender palette without looking like a Tailwind default. */
+  --color-success-bg: oklch(94% 0.04 155);
+  --color-success-fg: oklch(45% 0.13 155);
+
+  /* ── Type ──────────────────────────────────────────────── */
+  --font-display: var(--font-alegreya), ui-serif, Georgia, serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Radius ────────────────────────────────────────────── */
+  --radius-card: 1.25rem;
+
+  /* ── Shadow ────────────────────────────────────────────── */
+  --shadow-soft: 0 1px 2px oklch(35% 0.16 300 / 0.05),
+    0 18px 40px -22px oklch(35% 0.16 300 / 0.18);
+  --shadow-glow: 0 24px 70px -28px oklch(35% 0.16 300 / 0.42);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(98.5% 0.006 80);
+  --foreground: oklch(20% 0.04 305);
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss02", "cv11";
+  text-rendering: optimizeLegibility;
+}
+
+/* Editorial body text — slightly relaxed tracking */
+body {
+  letter-spacing: -0.005em;
+}
+
+::selection {
+  background: oklch(75% 0.12 305);
+  color: oklch(15% 0.04 305);
+}
+
+html {
+  scrollbar-color: oklch(70% 0.10 305) oklch(94% 0.02 305);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Utilities ──────────────────────────────────────────── */
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Editorial display type — for headlines */
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "lnum", "ss01";
+  letter-spacing: -0.018em;
+}
+
+/* Small caps label */
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: oklch(38% 0.05 305);
+}
+
+/* Hairline rule between editorial sections */
+.rule {
+  height: 1px;
+  background: oklch(86% 0.025 305);
+  border: 0;
+  display: block;
+}
+
+/* Tabular numbers for metric callouts */
+.tnum {
+  font-feature-settings: "tnum", "lnum";
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Soft float */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%      { transform: translateY(-10px) rotate(1.5deg); }
+}
+.animate-float-soft {
+  animation: float-soft 9s ease-in-out infinite;
+}
+
+/* Section background — paper with subtle warm gradient */
+.bg-paper {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, oklch(93% 0.04 305 / 0.55), transparent 60%),
+    oklch(98.5% 0.006 80);
+}
+
+/* Grain — almost imperceptible, adds tactility */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.08 0 0 0 0 0.32 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+:focus-visible {
+  outline: 2px solid oklch(35% 0.16 300);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Reveal class used by IntersectionObserver-driven Reveal component */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 1100ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 1100ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
 }
