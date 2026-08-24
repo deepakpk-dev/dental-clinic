@@ -13,7 +13,12 @@
 # testing
 /coverage
 /.playwright-cli/
-/output/playwright/
+/output/playwright/*
+!/output/playwright/readme-live-hero-desktop.png
+!/output/playwright/readme-live-experience-desktop.png
+!/output/playwright/readme-live-booking-desktop.png
+!/output/playwright/readme-live-hero-mobile.png
+!/output/playwright/readme-live-menu-mobile.png
 
 # next.js
 /.next/
