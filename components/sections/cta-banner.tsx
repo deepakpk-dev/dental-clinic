@@ -1,55 +1,15 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
-/**
- * Closing CTA — typographic, not a gradient banner.
- *
- * The previous version leaned on a multi-stop purple-magenta gradient,
- * which is the AI default. This version is restraint instead: a quiet
- * paper field, one large serif sentence, two unambiguous links. The
- * "wow" comes from typography, not colour.
- */
 export function CtaBanner() {
   return (
-    <section
-      aria-label="Get in touch"
-      className="relative bg-paper py-20 md:py-24"
-    >
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+    <section aria-label="Book a dental visit" className="bg-magenta-soft py-20 md:py-28">
+      <div className="mx-auto max-w-[1480px] px-5 md:px-9 lg:px-12">
         <Reveal>
-          <div className="grid items-baseline gap-10 md:grid-cols-12 md:gap-12">
-            <div className="md:col-span-2">
-              <p className="label">Closing note</p>
-            </div>
-            <div className="md:col-span-10">
-              <p className="font-display text-[clamp(1.9rem,4.6vw,4rem)] font-medium leading-[1] tracking-[-0.022em] text-ink">
-                Your better smile starts with{" "}
-                <em className="italic text-magenta">one</em> appointment.
-              </p>
-              <p className="mt-8 max-w-[58ch] text-pretty text-[1.05rem] leading-[1.55] text-ink-soft">
-                Walk-ins welcome. Bookings preferred. Sundays included. We&rsquo;ll see you at
-                Asco Plaza.
-              </p>
-              <div className="mt-12 flex flex-wrap items-baseline gap-x-10 gap-y-4">
-                <Link
-                  href="/#book"
-                  className="group inline-flex items-baseline gap-3 border-b border-ink pb-2 text-base font-medium text-ink"
-                >
-                  Book a chair
-                  <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-                <a
-                  href={`tel:${site.phones.primaryE164}`}
-                  className="group inline-flex items-baseline gap-3 border-b border-line pb-2 text-base font-medium text-ink-soft hover:border-ink hover:text-ink"
-                >
-                  <span className="label">Or call</span>
-                  <span className="tnum">{site.phones.primaryDisplay}</span>
-                </a>
-              </div>
-            </div>
+          <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+            <p className="font-display max-w-[11ch] text-balance text-[clamp(2.7rem,6vw,6.4rem)] font-medium leading-[0.9] text-purple">Let&apos;s make your next visit an easy one.</p>
+            <Link href="/#book" className="group inline-flex min-h-14 shrink-0 items-center gap-3 self-start rounded-full bg-purple px-7 text-sm font-semibold text-paper transition-colors hover:bg-purple-mid md:self-auto">Book a visit <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
           </div>
         </Reveal>
       </div>

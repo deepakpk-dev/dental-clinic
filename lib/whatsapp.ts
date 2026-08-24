@@ -31,7 +31,7 @@ export function buildBookingMessage(input: BookingInput): string {
     `Phone: ${input.phone}`,
     `Service: ${serviceLabel(input.service)}`,
     `Preferred: ${formatDate(input.date)} (${slotLabel(input.slot)})`,
-    `Notes: ${input.notes?.trim() ? input.notes.trim() : "—"}`,
+    `Notes: ${input.notes?.trim() ? input.notes.trim() : "None"}`,
     "",
     "(Sent from auradentalcare.com)",
   ];

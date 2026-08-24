@@ -4,7 +4,7 @@ export const site = {
   name: "Aura Dental Care",
   tagline: "Smiles crafted with care, in the heart of Ottapalam",
   description:
-    "Aura Dental Care is a modern dental clinic in Ottapalam, Kerala — offering orthodontics, implants, root canal, children's dentistry and cosmetic care. Open 7 days a week with same-week appointments.",
+    "Aura Dental Care is a modern dental clinic in Ottapalam, Kerala, offering orthodontics, implants, root canal, children's dentistry and cosmetic care. Open 7 days a week with same-week appointments.",
   url: "https://auradentalcare.example.com", // replace with real domain when issued
   locale: "en-IN",
   address: {
@@ -59,7 +59,7 @@ export type Service = {
   title: string;
   short: string;
   blurb: string;
-  // Lucide icon name string — resolved in the component
+  // Lucide icon name string, resolved in the component
   icon:
     | "Smile"
     | "Sparkles"
@@ -76,16 +76,16 @@ export const services: Service[] = [
     title: "Orthodontics",
     short: "Braces & aligners",
     blurb:
-      "Correction of crooked teeth with metal, ceramic and clear aligners — designed to fit your lifestyle.",
+      "Correction of crooked teeth with metal, ceramic and clear aligners, designed to fit your lifestyle.",
     icon: "Smile",
-    bookingLabel: "Orthodontics — Braces / Aligners",
+    bookingLabel: "Orthodontics, Braces / Aligners",
   },
   {
     key: "implants",
     title: "Implantology",
     short: "Permanent tooth replacement",
     blurb:
-      "Single, multiple and full-arch implants — restoring your bite with titanium-grade durability.",
+      "Single, multiple and full-arch implants, restoring your bite with titanium-grade durability.",
     icon: "ShieldCheck",
     bookingLabel: "Dental Implants",
   },
@@ -94,7 +94,7 @@ export const services: Service[] = [
     title: "Root Canal",
     short: "Painless endodontics",
     blurb:
-      "Modern, single-visit root canals using rotary endodontics — saving teeth that used to mean extraction.",
+      "Modern, single-visit root canals using rotary endodontics, saving teeth that used to mean extraction.",
     icon: "HeartPulse",
     bookingLabel: "Root Canal Treatment",
   },
@@ -103,7 +103,7 @@ export const services: Service[] = [
     title: "Children's Dentistry",
     short: "Gentle paediatric care",
     blurb:
-      "A friendly, fear-free experience built for little ones — from first-tooth checkups to early orthodontics.",
+      "A friendly, fear-free experience built for little ones, from first-tooth checkups to early orthodontics.",
     icon: "Baby",
     bookingLabel: "Children's Dentistry",
   },
@@ -112,7 +112,7 @@ export const services: Service[] = [
     title: "Cosmetic Dentistry",
     short: "Veneers, whitening, smile design",
     blurb:
-      "Whitening, veneers and full smile makeovers — designed in 3D before a single tooth is touched.",
+      "Whitening, veneers and full smile makeovers, designed in 3D before a single tooth is touched.",
     icon: "Sparkles",
     bookingLabel: "Cosmetic / Smile Design",
   },
@@ -121,7 +121,7 @@ export const services: Service[] = [
     title: "General Checkup",
     short: "Cleanings & consultations",
     blurb:
-      "Routine cleanings, scaling, fillings and oral health screenings — twice-yearly visits keep emergencies away.",
+      "Routine cleanings, scaling, fillings and oral health screenings. Twice-yearly visits help prevent emergencies.",
     icon: "Stethoscope",
     bookingLabel: "General Checkup / Cleaning",
   },

@@ -1,133 +1,48 @@
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import { Logo } from "./logo";
 import { site } from "@/lib/site";
 
 const explore = [
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact" },
-  { href: "/#book", label: "Book a chair" },
+  { href: "/#services", label: "Treatments" },
+  { href: "/#experience", label: "Our approach" },
+  { href: "/#book", label: "Book a visit" },
 ];
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer
-      className="relative mt-auto text-paper"
-      style={{
-        background:
-          "linear-gradient(180deg, oklch(28% 0.14 295) 0%, oklch(22% 0.10 295) 60%, oklch(18% 0.08 295) 100%)",
-      }}
-    >
-      <div className="mx-auto max-w-[1400px] px-6 pt-20 pb-10 md:px-10 md:pt-28">
-        {/* Editorial close — large display headline that the page lands on */}
-        <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-7">
-            <p className="label text-paper/60">A note before you go</p>
-            <h2 className="mt-5 font-display text-[clamp(1.9rem,4vw,3.4rem)] font-medium leading-[1] tracking-[-0.022em] text-paper">
-              We&rsquo;d rather earn your <em className="font-display italic text-magenta-soft">trust</em>{" "}
-              than your <em className="font-display italic text-magenta-soft">click</em>.
-            </h2>
-            <p className="mt-7 max-w-md text-pretty text-paper/70">
-              {site.description}
-            </p>
+    <footer id="visit" className="bg-ink text-paper">
+      <div className="mx-auto max-w-[1480px] px-5 pb-8 pt-20 md:px-9 md:pt-28 lg:px-12">
+        <div className="grid gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <Logo invert />
+            <p className="font-display mt-9 max-w-[10ch] text-[clamp(2.4rem,4vw,4.4rem)] font-medium leading-[0.94] text-paper">Modern care. A gentler experience.</p>
           </div>
 
-          <div className="md:col-span-5 md:pt-10">
-            <div className="grid gap-10 sm:grid-cols-2">
-              <div>
-                <p className="label text-paper/55">Visit</p>
-                <p className="mt-3 text-[0.95rem] leading-relaxed text-paper/85">
-                  {site.address.street},<br />
-                  {site.address.locality},<br />
-                  {site.address.region} {site.address.postalCode}
-                </p>
-                <p className="mt-4 text-sm text-paper/65">{site.hours.label}</p>
+          <div className="grid gap-10 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
+            <div>
+              <p className="text-sm font-semibold text-paper">Visit Aura</p>
+              <address className="mt-5 not-italic leading-7 text-paper/65">{site.address.street}<br />{site.address.locality}, {site.address.region}<br />{site.address.postalCode}</address>
+              <a href={site.social.google} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-magenta-soft"><MapPin className="h-4 w-4" />Open in Google Maps</a>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-paper">Contact</p>
+              <div className="mt-5 space-y-2 text-paper/65">
+                <a href={`tel:${site.phones.primaryE164}`} className="block transition-colors hover:text-paper tnum">{site.phones.primaryDisplay}</a>
+                <a href={`tel:${site.phones.secondaryE164}`} className="block transition-colors hover:text-paper tnum">{site.phones.secondaryDisplay}</a>
+                <a href={`mailto:${site.email}`} className="block break-all transition-colors hover:text-paper">{site.email}</a>
               </div>
-              <div>
-                <p className="label text-paper/55">Contact</p>
-                <ul className="mt-3 space-y-1.5 text-[0.95rem]">
-                  <li>
-                    <a
-                      href={`tel:${site.phones.primaryE164}`}
-                      className="tnum text-paper/85 transition hover:text-paper"
-                    >
-                      {site.phones.primaryDisplay}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={`tel:${site.phones.secondaryE164}`}
-                      className="tnum text-paper/85 transition hover:text-paper"
-                    >
-                      {site.phones.secondaryDisplay}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={`mailto:${site.email}`}
-                      className="break-all text-paper/85 transition hover:text-paper"
-                    >
-                      {site.email}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <p className="mt-6 text-sm leading-6 text-paper/65">{site.hours.label}</p>
             </div>
           </div>
         </div>
 
-        <hr className="mt-20 mb-8 border-0 h-px bg-paper/15" />
-
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <Logo invert />
-          </div>
-
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-            {explore.map((l) => (
-              <Link key={l.href} href={l.href} className="text-paper/70 transition hover:text-paper">
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href={site.social.instagram}
-              aria-label="Instagram"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-paper/20 transition hover:bg-paper/10"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
-              </svg>
-            </a>
-            <a
-              href={site.social.facebook}
-              aria-label="Facebook"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-paper/20 transition hover:bg-paper/10"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
-                <path d="M13 22v-8h2.8l.4-3.2H13V8.7c0-.9.3-1.6 1.7-1.6H16V4.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.6H7V14h2.6v8H13z" />
-              </svg>
-            </a>
-            <a
-              href={site.social.google}
-              aria-label="Google Maps"
-              className="inline-flex h-11 items-center gap-2 rounded-full border border-paper/20 px-4 text-xs text-paper/80 transition hover:bg-paper/10"
-            >
-              View on Maps →
-            </a>
-          </div>
+        <div className="mt-20 flex flex-col gap-7 border-t border-paper/15 pt-7 md:flex-row md:items-center md:justify-between">
+          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-7 gap-y-3">{explore.map((link) => <Link key={link.href} href={link.href} className="text-sm text-paper/60 transition-colors hover:text-paper">{link.label}</Link>)}</nav>
+          <div className="flex items-center gap-3"><a href={site.social.instagram} aria-label="Aura Dental Care on Instagram" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-paper/20 text-paper/70 transition-colors hover:bg-paper/10 hover:text-paper"><svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.7" fill="currentColor" stroke="none" /></svg></a><a href={site.social.facebook} aria-label="Aura Dental Care on Facebook" className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-paper/20 text-sm font-semibold text-paper/70 transition-colors hover:bg-paper/10 hover:text-paper">f</a></div>
         </div>
-
-        <div className="mt-10 flex flex-col gap-2 text-xs text-paper/55 md:flex-row md:items-center md:justify-between">
-          <p>© {year} {site.name}. All rights reserved.</p>
-          <p className="tnum">Designed in Ottapalam · Kerala · IN</p>
-        </div>
+        <div className="mt-8 flex flex-col gap-2 text-xs text-paper/40 sm:flex-row sm:justify-between"><p>© {year} {site.name}. All rights reserved.</p><p>East Ottapalam, Kerala</p></div>
       </div>
     </footer>
   );

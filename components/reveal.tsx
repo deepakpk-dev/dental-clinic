@@ -11,7 +11,7 @@ type Props = {
 
 /**
  * Lightweight IO-based reveal. Keeps GSAP reserved for the hero
- * choreography only — everything else gets ambient IntersectionObserver
+ * choreography only. Everything else gets ambient IntersectionObserver
  * reveals so we ship less JS to the browser.
  */
 export function Reveal({ children, className, delay = 0 }: Props) {

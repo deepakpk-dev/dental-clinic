@@ -2,8 +2,6 @@ import { Hero } from "@/components/sections/hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { WhyAura } from "@/components/sections/why-aura";
 import { Doctors } from "@/components/sections/doctors";
-import { GalleryMarquee } from "@/components/sections/gallery-marquee";
-import { Testimonials } from "@/components/sections/testimonials";
 import { Booking } from "@/components/sections/booking";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
@@ -14,8 +12,6 @@ export default function HomePage() {
       <ServicesGrid />
       <WhyAura />
       <Doctors />
-      <GalleryMarquee />
-      <Testimonials />
       <Booking />
       <CtaBanner />
     </>
